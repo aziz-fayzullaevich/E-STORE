@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Huninn&display=swap');
+
+:root {
+  --dark-text-color: #414141;
+  --light-text-color: #969696;
+  --white-color: #FFFFFF;
+  --active-color: #D74444;
+  --bgcolor: #313131;
+  --bgcolor-2: #0080ff;
+  --bg-btn-color: #245462;
+  --font-family: "Huninn", sans-serif;
+  --box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: var(--font-family);
+  user-select: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  box-shadow: var(--box-shadow);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}

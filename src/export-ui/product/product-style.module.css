@@ -1,0 +1,79 @@
+.mainBlock>h1 {
+    color: var(--dark-text-color);
+    margin: 30px 0;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.innerCard {
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.productBrand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bgcolor);
+    color: var(--white-color);
+    padding: 3px 10px;
+}
+
+.favoriteIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+.innerCard>img {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.productTitle,
+.productDesc {
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.productTitle {
+    -webkit-line-clamp: 1;
+}
+
+.productDesc {
+    -webkit-line-clamp: 2;
+}
+
+.productRating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.btn {
+    background-color: var(--bgcolor-2);
+    color: var(--white-color);
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn>span {
+    font-size: 14px;
+}
