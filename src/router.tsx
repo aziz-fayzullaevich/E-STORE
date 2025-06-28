@@ -12,7 +12,7 @@ const contentStyle: React.CSSProperties = {
 
 const content = <div style={contentStyle} />;
 
-const withSuspense = (Component: JSX.Element) => (
+const withSuspense = (Component: React.ReactNode) => (
   <Suspense
     fallback={
       <div className="loadRouter">
