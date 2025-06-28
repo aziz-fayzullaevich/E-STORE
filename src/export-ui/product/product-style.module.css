@@ -5,6 +5,7 @@
 .mainBlock>h1 {
     color: var(--dark-text-color);
     margin-bottom: 30px;
+    text-transform: capitalize;
 }
 
 .cardGrid {
