@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import style from './footer-style.module.css';
-import { ROUTES } from '../../const/Routes';
+import { ROUTES } from '../../const/routes';
 import { FaPhoneAlt, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 

@@ -1,6 +1,10 @@
+.mainBlock {
+    padding: 30px 0;
+}
+
 .mainBlock>h1 {
     color: var(--dark-text-color);
-    margin: 30px 0;
+    margin-bottom: 30px;
 }
 
 .cardGrid {
@@ -19,7 +23,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--bgcolor);
+    background-color: var(--light-text-color);
     color: var(--white-color);
     padding: 3px 10px;
 }
@@ -33,7 +37,6 @@
 
 .innerCard>img {
     width: 100%;
-    margin: 20px 0;
 }
 
 .productTitle,
@@ -46,22 +49,30 @@
 
 .productTitle {
     -webkit-line-clamp: 1;
+    line-clamp: 1;
 }
 
 .productDesc {
     -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .productRating {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     gap: 10px;
     margin: 15px 0;
 }
 
+.ratingFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .btn {
-    background-color: var(--bgcolor-2);
+    background-color: var(--bg-btn-color);
     color: var(--white-color);
     font-size: 20px;
     width: 100%;

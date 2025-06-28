@@ -23,7 +23,7 @@ export const useCategoryStore = create<CategoryState>(set => ({
     fetchCategories: async () => {
         set({ loading: true, error: null });
         try {
-            const res = await axios.get<Tcategory[]>(`${BASE_URL}/categories`);
+            const res = await axios.get<Tcategory[]>(`${BASE_URL}/products/categories`);
             set({ categories: res.data, loading: false });
         }
         catch (error) {

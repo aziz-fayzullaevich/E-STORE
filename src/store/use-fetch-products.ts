@@ -28,7 +28,7 @@ export const useProductsStore = create<ProductState>(set => ({
     fetchProducts: async () => {
         set({ loading: true, error: null });
         try {
-            const res = await axios.get<{ products: TProduct[] }>(`${BASE_URL}`);
+            const res = await axios.get<{ products: TProduct[] }>(`${BASE_URL}/products`);
             set({ products: res.data.products, loading: false });
         } catch (error) {
             set({ error: 'Не удалось получить товары!', loading: false });

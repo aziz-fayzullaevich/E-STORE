@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useProductsStore } from '../../store/use-fetch-products';
-import { Card, Image, message, Skeleton } from 'antd';
+import { Card, Image, message, Skeleton, Flex, Rate } from 'antd';
 import { MdFavoriteBorder, MdOutlineAddShoppingCart } from "react-icons/md";
 import style from './product-style.module.css';
 
@@ -40,7 +40,10 @@ const Product = () => {
                                 <h3 className={style.productTitle}>{product.title}</h3>
                                 <p className={style.productDesc}>{product.description}</p>
                                 <div className={style.productRating}>
-                                    <span>{product.rating}</span>
+                                    <Flex gap="middle" vertical className={style.ratingFlex}>
+                                        <Rate value={product.rating} disabled />
+                                        <span>{product.rating}</span>
+                                    </Flex>
                                     <span>${product.price}</span>
                                 </div>
                                 <button className={style.btn}>
@@ -57,4 +60,4 @@ const Product = () => {
     )
 }
 
-export default Product
+export default Product;

@@ -1,8 +1,8 @@
 import style from './header-style.module.css';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../const/Routes';
+import { ROUTES } from '../../const/routes';
 import { FaPhone, FaCaravan } from "react-icons/fa6";
-import { MdFavoriteBorder, MdOutlineShoppingCart, MdLogin  } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlineShoppingCart, MdLogin } from "react-icons/md";
 import { Input } from 'antd';
 
 const Header = () => {
@@ -49,7 +49,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <Link to={ROUTES.REGISTER}>
-                                    <MdLogin  />
+                                    <MdLogin />
                                 </Link>
                             </li>
                         </ul>
@@ -57,6 +57,7 @@ const Header = () => {
                 </div>
             </div>
         </header>
+
     )
 }
 
