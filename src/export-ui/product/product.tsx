@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 import { useProductsStore } from '../../store/use-fetch-products';
+import { useCartStore } from '../../store/use-cart-store';
 import { Card, Image, message, Skeleton, Flex, Rate } from 'antd';
 import { MdFavoriteBorder, MdOutlineAddShoppingCart } from "react-icons/md";
 import style from './product-style.module.css';
 
-const Product = () => {
+export const Product = () => {
   const {
     products,
     loading,
     error,
     selectedCategory,
   } = useProductsStore();
+  const addToCart = useCartStore(state => state.addToCart);
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -20,42 +22,52 @@ const Product = () => {
     }
   }, [error]);
 
-  if (loading) return <Skeleton />;
+  const handleAddToCart = (product: typeof products[0]) => {
+    addToCart({...product, quantity: 1});
+    messageApi.success(`${product.title} добавлен в корзину!`)
+  }
 
   return (
     <div className={style.mainBlock}>
       {contextHolder}
       <h1>{selectedCategory}</h1>
       <div className={style.cardGrid}>
-        {products.map(product => (
-          <Card
-            key={product.id}
-            hoverable
-            cover={
-              <div className={style.innerCard}>
-                <span className={style.productBrand}>{product.brand}</span>
-                <MdFavoriteBorder className={style.favoriteIcon} />
-                <Image src={product.images[0]} alt={product.title} />
-                <h3 className={style.productTitle}>{product.title}</h3>
-                <p className={style.productDesc}>{product.description}</p>
-                <div className={style.productRating}>
-                  <Flex gap="middle" vertical className={style.ratingFlex}>
-                    <Rate value={product.rating} disabled />
-                    <span>{product.rating}</span>
-                  </Flex>
-                  <span>${product.price}</span>
+        {loading ? (
+          Array.from({ length: 10 }).map((_, index) => (
+            <Card key={index} className={style.skeletonCard}>
+              <Skeleton.Image className={style.skeletonImage} active />
+              <Skeleton active paragraph={{ rows: 3 }} />
+            </Card>
+          ))
+        ) : (
+          products.map(product => (
+            <Card
+              key={product.id}
+              hoverable
+              cover={
+                <div className={style.innerCard}>
+                  <span className={style.productBrand}>{product.brand}</span>
+                  <MdFavoriteBorder className={style.favoriteIcon} />
+                  <Image src={product.images[0]} alt={product.title} />
+                  <h3 className={style.productTitle}>{product.title}</h3>
+                  <p className={style.productDesc}>{product.description}</p>
+                  <div className={style.productRating}>
+                    <Flex gap="middle" vertical className={style.ratingFlex}>
+                      <Rate value={product.rating} disabled />
+                      <span>{product.rating}</span>
+                    </Flex>
+                    <span>${product.price}</span>
+                  </div>
+                  <button className={style.btn} onClick={()=>handleAddToCart(product)}>
+                    <MdOutlineAddShoppingCart />
+                    <span>Добавить в корзину</span>
+                  </button>
                 </div>
-                <button className={style.btn}>
-                  <MdOutlineAddShoppingCart />
-                  <span>Добавить в корзину</span>
-                </button>
-              </div>
-            }
-          />
-        ))}
+              }
+            />
+          ))
+        )}
       </div>
     </div>
   );
 };
-
-export default Product;

@@ -4,7 +4,7 @@ import { ROUTES } from '../../const/routes';
 import { FaPhoneAlt, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer>
       <div className="container">
@@ -45,5 +45,3 @@ const Footer = () => {
     </footer >
   )
 }
-
-export default Footer

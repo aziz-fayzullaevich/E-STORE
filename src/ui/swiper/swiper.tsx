@@ -1,7 +1,7 @@
 import style from './swipe-style.module.css';
 import { Carousel } from "antd";
 
-const Swiper = () => {
+export const Swiper = () => {
     return (
         <Carousel autoplay autoplaySpeed={2000}>
             <div className={style.contentStyle}>
@@ -16,5 +16,3 @@ const Swiper = () => {
         </Carousel>
     )
 }
-
-export default Swiper;

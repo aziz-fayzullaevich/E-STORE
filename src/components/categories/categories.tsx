@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { useCategoryStore } from '../../store/use-fetch-categories-store';
 import { useProductsStore } from '../../store/use-fetch-products';
 import { Skeleton, Tabs, message } from 'antd';
+import style from './categories-style.module.css';
 
-const Categories = () => {
+export const Categories = () => {
   const { categories, loading, error, fetchCategories } = useCategoryStore();
   const { fetchProductsByCategory } = useProductsStore();
   const [messageApi, contextHolder] = message.useMessage();
@@ -32,23 +33,36 @@ const Categories = () => {
     }
   }, [error]);
 
-  if (loading) return <Skeleton />;
+  const renderSkeletonTabs = () => (
+    <div className={style.skeletonTabs}>
+      {Array.from({ length: 10 }).map((_, index) => (
+        <Skeleton.Button
+          key={index}
+          active
+          size="default"
+          className={style.skeletonTabItem}
+        />
+      ))}
+    </div>
+  );
 
   return (
-    <div>
+    <div className={style.categoriesWrapper}>
       {contextHolder}
-      <Tabs
-        tabPosition="top"
-        type="line"
-        onChange={(key) => fetchProductsByCategory(key)}
-        items={categories.map(category => ({
-          key: category.slug,
-          label: category.name,
-          children: null,
-        }))}
-      />
+      {loading ? (
+        renderSkeletonTabs()
+      ) : (
+        <Tabs
+          tabPosition="top"
+          type="line"
+          onChange={(key) => fetchProductsByCategory(key)}
+          items={categories.map(category => ({
+            key: category.slug,
+            label: category.name,
+            children: null,
+          }))}
+        />
+      )}
     </div>
   );
 };
-
-export default Categories;

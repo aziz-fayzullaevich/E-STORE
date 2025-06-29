@@ -4,8 +4,10 @@ import { ROUTES } from '../../const/routes';
 import { FaPhone, FaCaravan } from "react-icons/fa6";
 import { MdFavoriteBorder, MdOutlineShoppingCart, MdLogin } from "react-icons/md";
 import { Input } from 'antd';
+import { useCartStore } from '../../store/use-cart-store';
 
-const Header = () => {
+export const Header = () => {
+    const cart = useCartStore(state => state.cart);
     return (
         <header>
             <div className={style.topHead}>
@@ -38,17 +40,18 @@ const Header = () => {
                         <Input.Search placeholder="Поиск товаров" variant="filled" />
                         <ul className={style.navbars}>
                             <li>
-                                <Link to={ROUTES.FAVORITES}>
+                                <Link to={ROUTES.FAVORITES} className={style.linkItem}>
                                     <MdFavoriteBorder />
                                 </Link>
                             </li>
                             <li>
-                                <Link to={ROUTES.CART}>
+                                <Link to={ROUTES.CART} className={style.linkItem}>
+                                {cart.length>0 && <span>{cart.length}</span>}
                                     <MdOutlineShoppingCart />
                                 </Link>
                             </li>
                             <li>
-                                <Link to={ROUTES.REGISTER}>
+                                <Link to={ROUTES.REGISTER} className={style.linkItem}>
                                     <MdLogin />
                                 </Link>
                             </li>
@@ -59,6 +62,4 @@ const Header = () => {
         </header>
 
     )
-}
-
-export default Header;
+};
