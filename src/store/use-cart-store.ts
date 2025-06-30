@@ -16,6 +16,9 @@ type CartState = {
     cart: TProduct[];
     addToCart: (product: TProduct) => void;
     removeFromCart: (id: number) => void;
+  increaseQuantity: (id: number) => void;
+  decreaseQuantity: (id: number) => void;
+  clearCart: () => void;
 };
 
 export const useCartStore = create<CartState>((set) => ({
@@ -41,4 +44,19 @@ export const useCartStore = create<CartState>((set) => ({
         set((state) => ({
             cart: state.cart.filter((item) => item.id !== id),
         })),
+    increaseQuantity: (id) => set(state => ({
+        cart: state.cart.map(item =>
+            item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+    })),
+
+    decreaseQuantity: (id) => set(state => ({
+        cart: state.cart.map(item =>
+            item.id === id && item.quantity > 1
+                ? { ...item, quantity: item.quantity - 1 }
+                : item
+        )
+    })),
+
+    clearCart: () => set({ cart: [] }),
 }));

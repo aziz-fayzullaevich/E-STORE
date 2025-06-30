@@ -5,9 +5,12 @@ import { FaPhone, FaCaravan } from "react-icons/fa6";
 import { MdFavoriteBorder, MdOutlineShoppingCart, MdLogin } from "react-icons/md";
 import { Input } from 'antd';
 import { useCartStore } from '../../store/use-cart-store';
+import { useFavoriteStore } from '../../store/use-favorite-store';
 
 export const Header = () => {
     const cart = useCartStore(state => state.cart);
+    const favotire = useFavoriteStore(state => state.favorite);
+
     return (
         <header>
             <div className={style.topHead}>
@@ -41,12 +44,13 @@ export const Header = () => {
                         <ul className={style.navbars}>
                             <li>
                                 <Link to={ROUTES.FAVORITES} className={style.linkItem}>
+                                    {favotire.length > 0 && <span>{favotire.length}</span>}
                                     <MdFavoriteBorder />
                                 </Link>
                             </li>
                             <li>
                                 <Link to={ROUTES.CART} className={style.linkItem}>
-                                {cart.length>0 && <span>{cart.length}</span>}
+                                    {cart.length > 0 && <span>{cart.length}</span>}
                                     <MdOutlineShoppingCart />
                                 </Link>
                             </li>

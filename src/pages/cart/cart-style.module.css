@@ -1,10 +1,12 @@
 .cartTitle {
-    margin: 20px 0;
+    margin: 30px 0;
     color: var(--dark-text-color);
 }
 
 .cartBlock {
-    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .innerCartBlock {
@@ -18,6 +20,20 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.innerCartBlock>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantityControl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .allPrice {
@@ -46,4 +62,71 @@
     border-radius: 100%;
     padding: 3px;
     font-size: 20px;
+}
+
+.totalBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.totalBlock>div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.totalBlock>div>button {
+    background-color: var(--bg-btn-color);
+}
+
+.totalBlock button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: var(--white-color);
+    font-size: 14px;
+}
+
+.totalBlock>button {
+    background-color: crimson;
+}
+
+.modalContent {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.modalItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--light-text-color);
+    padding-bottom: 10px;
+}
+
+.modalImage {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modalTitle {
+    font-weight: 500;
+}
+
+.modalDetails {
+    font-size: 14px;
+    color: #888;
+}
+
+.modalTotal {
+    margin-top: 1rem;
+    text-align: right;
 }
