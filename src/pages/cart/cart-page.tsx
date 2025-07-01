@@ -69,7 +69,9 @@ const CartPage = () => {
                         <div className={style.innerCartBlock}>
                             <div>
                                 <Image width={100} src={item.images?.[0]} alt={item.title} />
-                                <p className={style.allPrice}>Общая сумма: ${item.price * item.quantity}</p>
+                                <p className={style.allPrice}>
+                                    Общая сумма: ${Math.round(item.price * item.quantity).toLocaleString()}
+                                </p>
                             </div>
                             <div>
                                 <h3>{item.title}</h3>
@@ -79,7 +81,9 @@ const CartPage = () => {
                                     <Button onClick={() => handleIncrease(item.id)} icon={<MdAdd />} />
                                 </div>
                             </div>
-                            <p className={style.price}>Цена за штуку: ${item.price}</p>
+                            <p className={style.price}>
+                                Цена за штуку: ${Math.round(item.price).toLocaleString()}
+                            </p>
                             <button className={style.clearBtn} onClick={() => handleRemove(item.id)}>
                                 <MdClear />
                             </button>
@@ -90,7 +94,7 @@ const CartPage = () => {
 
             <div className={style.totalBlock}>
                 <div>
-                    <h3>Итого: ${total}</h3>
+                    <h3>Итого: ${Math.round(total).toLocaleString()}</h3>
                     <button onClick={handleOrder}>Оформить заказ</button>
                 </div>
                 <button onClick={handleClearCart}>Очистить корзину</button>
@@ -114,7 +118,7 @@ const CartPage = () => {
                             <div>
                                 <div className={style.modalTitle}>{item.title}</div>
                                 <div className={style.modalDetails}>
-                                    {item.quantity} × ${item.price} = ${item.quantity * item.price}
+                                    {item.quantity} × ${Math.round(item.price)} = ${Math.round(item.quantity * item.price).toLocaleString()}
                                 </div>
                             </div>
                         </div>
@@ -154,7 +158,7 @@ const CartPage = () => {
                         </Form.Item>
                     </Form>
                 </div>
-                    <h3 className={style.modalTotal}>Итого: ${total}</h3>
+                <h3 className={style.modalTotal}>Итого: ${Math.round(total).toLocaleString()}</h3>
             </Modal>
 
 

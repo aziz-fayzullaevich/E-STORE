@@ -5,6 +5,9 @@ import { ROUTES } from "./const/routes";
 import Favorite from "./pages/favorite/favorite-page";
 import NotFounPage from "./pages/not-found/not-found-page";
 import CartPage from "./pages/cart/cart-page";
+import AboutPage from "./pages/about/about-page";
+import ContactPage from "./pages/contact/contact-page";
+import RegisterPage from "./pages/register/register-page";
 const HomePage = lazy(() => import('./pages/home/home-page'));
 const MainLayout = lazy(() => import('./layout/main-layout'));
 
@@ -45,6 +48,18 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.CART,
         element: withSuspense(<CartPage />),
+      },
+      {
+        path: ROUTES.REGISTER,
+        element: withSuspense(<RegisterPage />),
+      },
+      {
+        path: ROUTES.ABOUT,
+        element: withSuspense(<AboutPage />),
+      },
+      {
+        path: ROUTES.CONTACTS,
+        element: withSuspense(<ContactPage />),
       },
     ],
   },
