@@ -50,10 +50,6 @@ export const router = createBrowserRouter([
         element: withSuspense(<CartPage />),
       },
       {
-        path: ROUTES.REGISTER,
-        element: withSuspense(<RegisterPage />),
-      },
-      {
         path: ROUTES.ABOUT,
         element: withSuspense(<AboutPage />),
       },
@@ -62,6 +58,10 @@ export const router = createBrowserRouter([
         element: withSuspense(<ContactPage />),
       },
     ],
+  },
+  {
+    path: ROUTES.REGISTER,
+    element: withSuspense(<RegisterPage />),
   },
   {
     path: '*',
