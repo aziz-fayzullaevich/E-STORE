@@ -1,0 +1,29 @@
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mainBlock>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info>p {
+    color: var(--dark-text-color);
+}
+
+.info>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--dark-text-color);
+}

@@ -1,0 +1,87 @@
+.title {
+    color: var(--bg-btn-color);
+}
+
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.descriptionBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 0;
+}
+
+.descriptionBlock>img {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 400px;
+}
+
+.leftBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.titleForDesc {
+    color: var(--dark-text-color);
+}
+
+.descForDesc {
+    color: var(--light-text-color);
+    line-height: 20px;
+}
+
+.mainTitle {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.infoBlock {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.infoBox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.infoIcon {
+    font-size: 80px;
+    color: var(--bg-btn-color);
+}
+
+.infoBox>div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.descInfo {
+    color: var(--dark-text-color);
+    line-height: 20px;
+}
+
+.infoCheckBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.infoIconCheck {
+    font-size: 80px;
+    color: green;
+}

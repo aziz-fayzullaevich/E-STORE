@@ -5,6 +5,8 @@ import { Card, Image, message, Skeleton, Flex, Rate } from 'antd';
 import { MdFavoriteBorder, MdOutlineAddShoppingCart, MdFavorite } from "react-icons/md";
 import { useFavoriteStore } from '../../store/use-favorite-store';
 import style from './product-style.module.css';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../const/routes';
 
 export const Product = () => {
   const { products, loading, error, selectedCategory } = useProductsStore();
@@ -62,7 +64,7 @@ export const Product = () => {
                   </div>
                   <Image src={product.images[0]} alt={product.title} />
                   <h3 className={style.productTitle}>{product.title}</h3>
-                  <p className={style.productDesc}>{product.description}</p>
+                  <Link to={`/product/${product.id}`} className={style.productDesc}>{product.description}</Link>
                   <div className={style.productRating}>
                     <Flex gap="middle" vertical className={style.ratingFlex}>
                       <Rate value={product.rating} disabled />

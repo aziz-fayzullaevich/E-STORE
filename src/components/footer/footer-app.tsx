@@ -13,8 +13,6 @@ export const Footer = () => {
             <h2 className={style.title}>Навигации</h2>
             <div className={style.navbars}>
               <Link to={ROUTES.HOME}>Главная</Link>
-              <Link to={ROUTES.PRODUCT}>Продукты</Link>
-              <Link to={ROUTES.CATALOG}>Каталог</Link>
               <Link to={ROUTES.CART}>Корзина</Link>
               <Link to={ROUTES.ABOUT}>О нас</Link>
               <Link to={ROUTES.CONTACTS}> Контакты</Link>

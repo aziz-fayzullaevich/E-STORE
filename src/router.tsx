@@ -8,6 +8,7 @@ import CartPage from "./pages/cart/cart-page";
 import AboutPage from "./pages/about/about-page";
 import ContactPage from "./pages/contact/contact-page";
 import RegisterPage from "./pages/register/register-page";
+import ProductID from "./pages/product-id/product-id";
 const HomePage = lazy(() => import('./pages/home/home-page'));
 const MainLayout = lazy(() => import('./layout/main-layout'));
 
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.CART,
         element: withSuspense(<CartPage />),
+      },
+      {
+        path: ROUTES.PRODUCT,
+        element: withSuspense(<ProductID />),
       },
       {
         path: ROUTES.ABOUT,

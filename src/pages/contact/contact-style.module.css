@@ -1,0 +1,60 @@
+.title {
+    padding: 20px 0;
+}
+
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.contactBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.leftBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+}
+
+.leftBlock>button {
+    background-color: var(--bg-btn-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.rightBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.callInfo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.callInfo>div, .instaInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.callInfo>div>a {
+    color: var(--dark-text-color);
+}
+
+.icon {
+    font-size: 25px;
+    color: var(--dark-text-color);
+}
