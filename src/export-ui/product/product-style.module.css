@@ -75,6 +75,11 @@
 .productDesc {
     -webkit-line-clamp: 2;
     line-clamp: 2;
+    color: var(--dark-text-color);
+}
+
+.productDesc:hover {
+    color: var(--light-text-color);
 }
 
 .productRating {

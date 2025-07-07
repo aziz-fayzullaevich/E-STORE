@@ -16,9 +16,9 @@ type CartState = {
     cart: TProduct[];
     addToCart: (product: TProduct) => void;
     removeFromCart: (id: number) => void;
-  increaseQuantity: (id: number) => void;
-  decreaseQuantity: (id: number) => void;
-  clearCart: () => void;
+    increaseQuantity: (id: number) => void;
+    decreaseQuantity: (id: number) => void;
+    clearCart: () => void;
 };
 
 export const useCartStore = create<CartState>((set) => ({
